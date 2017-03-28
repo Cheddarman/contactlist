@@ -24,13 +24,16 @@ const styles = {
 		borderRadius:'50%',
 		border:'1px solid light gray',
 		margin:'5px',
+		display:'inlineBlock',
 	},
 	h1: {
 		width:'100%',
 	},
-	span: {
-		padding:'20px',
-	},
+	// p: {
+	// 	lineHeight:'30px',
+	// 	display:'inlineBlock',
+	// 	width:'200px',
+	// },
 }
 
 
@@ -46,7 +49,7 @@ export default React.createClass({
 		  		{this.props.contacts.map(contact=>(
 		  			<li key={contact.id}>
 		  				<div style={styles.contactInList} className="contactInList">
-		  					<img style={styles.img} src={contact.picture.thumbnail} alt="" /><span style={styles.span}>{contact.name.first} {contact.name.last}</span>
+		  					<img style={styles.img} src={contact.picture.thumbnail} alt="" /><span>{contact.name.first} {contact.name.last}</span>
 		  				</div>
 		  			</li>
 		  			))}
