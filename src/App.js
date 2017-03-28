@@ -1,21 +1,23 @@
-import React, { Component } from 'react';
-import logo from './logo.svg';
-import './App.css';
+import React from 'react'
+import Users from './Users.json'
+import ContactList from './ContactList'
+import SingleView from './SingleView'
+import { BrowserRouter, Route } from 'react-router-dom'
 
-class App extends Component {
+console.log(Users)
+
+export default React.createClass({
   render() {
-    return (
-      <div className="App">
-        <div className="App-header">
-          <img src={logo} className="App-logo" alt="logo" />
-          <h2>Welcome to React</h2>
-        </div>
-        <p className="App-intro">
-          To get started, edit <code>src/App.js</code> and save to reload.
-        </p>
-      </div>
-    );
+    return(
+    	<BrowserRouter>
+	      <div>
+	      	<ContactList contacts={Users} />
+	      	<SingleView contacts={Users} />
+	      </div>  
+    	</BrowserRouter>
+    )
   }
-}
+})
 
-export default App;
+// <Route exact={true} path="/" component={ContactList} />
+// 	      	<Route path={}
