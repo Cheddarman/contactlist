@@ -1,12 +1,37 @@
 import React from 'react'
-import SingleView from './SingleView'
-import { BrowserRouter, Route } from 'react-router-dom'
 
-// const styles = {
-// 	h1: {
-// 		fontWeight:'bold',
-// 	}
-// },style={styles.h1}
+
+const styles = {
+	mainDiv: {
+		width: '600px',
+		margin:'auto',
+		marginTop:'60px',
+		display:'flex',
+		flexWrap:'wrap',
+		justifyContent:'center',
+	},
+	ul: {
+		listStyleType:'none',
+		padding:'0',
+		width:'100%',
+	},
+	contactInList: {
+		width:'100%',
+		fontWeight:'bold',
+		border:'1px solid gray',
+	},
+	img: {
+		borderRadius:'50%',
+		border:'1px solid light gray',
+		margin:'5px',
+	},
+	h1: {
+		width:'100%',
+	},
+	span: {
+		padding:'20px',
+	},
+}
 
 
 export default React.createClass({
@@ -14,23 +39,19 @@ export default React.createClass({
 
 
     return(
-    	<BrowserRouter>
-	    	<div>
-	    		<h1 >List View</h1>
-			  	<ul>
-			  		<p>My Peeps</p>
-			  		{this.props.contacts.map(contact=>(
-			  			<li key={contact.id}>
-			  				<div className="contactInList">
-			  					<Route component={SingleView}>
-			  					<img src={contact.picture.thumbnail} alt="" />{contact.name.first}
-			  					</Route>
-			  				</div>
-			  			</li>
-			  			))}
-			  	</ul>
-	    	</div>
-    	</BrowserRouter>
+    	<div style={styles.mainDiv} className="mainDiv">
+    		<h1 style={styles.h1}>List View</h1>
+		  	<ul style={styles.ul}>
+		  		<p>My Peeps</p>
+		  		{this.props.contacts.map(contact=>(
+		  			<li key={contact.id}>
+		  				<div style={styles.contactInList} className="contactInList">
+		  					<img style={styles.img} src={contact.picture.thumbnail} alt="" /><span style={styles.span}>{contact.name.first} {contact.name.last}</span>
+		  				</div>
+		  			</li>
+		  			))}
+		  	</ul>
+    	</div>
     )
   }
 })

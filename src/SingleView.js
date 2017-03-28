@@ -1,6 +1,6 @@
 import React from 'react'
-import ContactList from './ContactList'
-import { Route } from 'react-router-dom'
+
+
 
 export default React.createClass({
   render() {
@@ -8,7 +8,7 @@ export default React.createClass({
     	
 	    	<div>
 	  			<div className="headBox">
-	  			<button><Route component={ContactList} /></button>
+	  			<button></button>
 	  			</div>
 	  			<ul>
 	  				{this.props.contacts.map(contact=>(

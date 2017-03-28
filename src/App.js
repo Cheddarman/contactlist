@@ -3,6 +3,7 @@ import Users from './Users.json'
 import ContactList from './ContactList'
 import SingleView from './SingleView'
 import { BrowserRouter, Route } from 'react-router-dom'
+import Normalize from './Normalize.css'
 
 console.log(Users)
 
